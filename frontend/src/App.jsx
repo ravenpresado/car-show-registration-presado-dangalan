@@ -1,121 +1,92 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <div className="container-fluid bg-light min-vh-100 p-0">
+      {/* Dashboard Header */}
+      <nav className="navbar navbar-dark bg-dark px-4 py-3">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+          <span className="navbar-brand fw-bold fs-4">
+            AutoVista Events
+          </span>
+          <div className="text-white-50 small">
+            Car Show 2027 Registration Dashboard
+          </div>
+        </div>
+        <span className="badge bg-primary fs-6">
+          Admin Dashboard
+        </span>
+      </nav>
+
+      {/* Main Content */}
+      <main className="container py-4">
+        <div className="mb-4">
+          <h2 className="fw-bold">Registration Overview</h2>
+          <p className="text-secondary">
+            Manage and monitor Car Show 2027 registrations.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        {/* KPI Cards */}
+        <div className="row g-3 mb-4">
+          <div className="col-md-4 col-lg">
+            <div className="card shadow-sm border-0 h-100">
+              <div className="card-body">
+                <p className="text-secondary mb-2">Total Registrations</p>
+                <h3 className="fw-bold">125</h3>
+              </div>
+            </div>
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <div className="col-md-4 col-lg">
+            <div className="card shadow-sm border-0 h-100">
+              <div className="card-body">
+                <p className="text-secondary mb-2">Collected Payments</p>
+                <h3 className="fw-bold text-success">₱85,000</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4 col-lg">
+            <div className="card shadow-sm border-0 h-100">
+              <div className="card-body">
+                <p className="text-secondary mb-2">Uncollected Payments</p>
+                <h3 className="fw-bold text-danger">₱25,000</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4 col-lg">
+            <div className="card shadow-sm border-0 h-100">
+              <div className="card-body">
+                <p className="text-secondary mb-2">Confirmed</p>
+                <h3 className="fw-bold text-primary">95</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4 col-lg">
+            <div className="card shadow-sm border-0 h-100">
+              <div className="card-body">
+                <p className="text-secondary mb-2">Checked-In</p>
+                <h3 className="fw-bold text-info">60</h3>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        {/* Registration Table Placeholder */}
+        <div className="card shadow-sm border-0">
+          <div className="card-body">
+            <h5 className="fw-bold mb-3">Recent Registrations</h5>
+            <p className="text-secondary mb-0">
+              Registration records will appear here.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
   )
 }
 
